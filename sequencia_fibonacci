@@ -1,0 +1,34 @@
+Algoritmo "verificarFibonacci"
+
+// Descrição   : Programa calcula se o numero digitado pertence à sequencia de Fibonacci.
+// Autor(a)    : Vanessa Tavares Teixeira
+// Data atual  : 03/09/2024
+// Função para gerar a sequência de Fibonacci
+
+Var
+    // Declaração de variáveis
+    conferir_numero, i : inteiro
+    ok_fibonacci: logico
+    fib_sequencia: vetor[0..1000] de inteiro
+    next_fib: inteiro
+
+inicio
+    // Inicializa os dois primeiros elementos da sequência
+    fib_sequencia[0] <- 0
+    fib_sequencia[1] <- 1
+    para i de 2 ate 1000 faça
+         fib_sequencia[i] <- fib_sequencia[i-1] + fib_sequencia[i-2]
+    fimpara
+    escreval("Informe um numero para verificar se pertence a sequencia de FIbonacci: ")
+    leia(conferir_numero)
+       ok_fibonacci <- falso
+       para i de 0 até 30 faça
+            se fib_sequencia[i] = conferir_numero entao
+            ok_fibonacci <- verdadeiro
+            fimse
+       fimpara
+    se ok_fibonacci entao
+       escreva ("O numero ", conferir_numero, " NÃO pertence à sequencia de FIbonacci.")
+       fimse
+       
+       fimalgoritmo
